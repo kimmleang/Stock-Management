@@ -11,6 +11,8 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEdit, faPen, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 type Product = {
   id: number;
@@ -161,20 +163,21 @@ export default function productPage() {
                       <td className="px-6 py-4">{product.price}</td>
                       <td className="px-6 py-4">{product.quantity}</td>
                       <td className="px-6 py-4">{product.description}</td>
-                      <td className="px-6 py-4 flex gap-2">
+                      <td className="px-6 py-4 flex gap-2 text-center">
                         <Link
                           href={`/products/update/${product.id}`}
-                          className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                          className="flex items-center justify-center w-8 h-8 bg-green-500 rounded-sm hover:bg-green-600"
                         >
-                          Edit
+                          <FontAwesomeIcon icon={faPen} className="text-white w-4 h-4" />
                         </Link>
                         <button
                           onClick={() => openModal(product.id)}
-                          className="font-medium text-red-600 dark:text-red-500 hover:underline"
+                          className="flex items-center justify-center w-8 h-8 bg-red-500 rounded-sm hover:bg-red-600"
                         >
-                          Delete
+                          <FontAwesomeIcon icon={faTrash} className="text-white w-4 h-4" />
                         </button>
                       </td>
+
                     </tr>
                   ))
                 ) : (
