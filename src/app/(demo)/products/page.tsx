@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/breadcrumb";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faPen, faTrash } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
 
 type Product = {
   id: number;
@@ -37,12 +38,35 @@ export default function productPage() {
     fetchProducts();
   }, [pagination.current_page, search]);
 
+  // const fetchProducts = async () => {
+  //   try {
+  //     const res = await fetch(
+  //       `http://localhost:8002/api/products/list?page=${pagination.current_page}&search=${search}`
+  //     );
+  //     const data = await res.json();
+  //     setProducts(data.data);
+  //     setPagination({
+  //       current_page: data.current_page,
+  //       last_page: data.last_page,
+  //       per_page: data.per_page,
+  //     });
+  //   } catch (error) {
+  //     console.error("Error fetching products:", error);
+  //   }
+  // };
+
+
   const fetchProducts = async () => {
     try {
-      const res = await fetch(
-        `http://localhost:8002/api/products/list?page=${pagination.current_page}&search=${search}`
+      const res = await axios.get(
+        `http://localhost:8002/api/products/list`, {
+          params: {
+            page: pagination.current_page,
+            search: search
+          }
+        }
       );
-      const data = await res.json();
+      const data = res.data;
       setProducts(data.data);
       setPagination({
         current_page: data.current_page,

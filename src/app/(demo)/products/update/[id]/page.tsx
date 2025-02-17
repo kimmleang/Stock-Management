@@ -11,6 +11,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import axios from "axios";
 
 export default function UpdateProductPage({ params }: { params: { id: string } }) {
   const { id } = params;
@@ -30,11 +31,9 @@ export default function UpdateProductPage({ params }: { params: { id: string } }
 
   const fetchProductDetails = async () => {
     try {
-      const res = await fetch(`http://localhost:8002/api/products/show/${id}`);
-      if (!res.ok) {
-        throw new Error("Failed to fetch product details");
-      }
-      const data = await res.json();
+
+      const res = await axios.get(`http://localhost:8002/api/products/show/${id}`);  
+      const data = res.data;
       setFormData({
         name: data.name,
         description: data.description,
