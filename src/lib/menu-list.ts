@@ -22,6 +22,7 @@ type Menu = {
   submenus?: Submenu[];
 };
 
+
 type Group = {
   groupLabel: string;
   menus: Menu[];

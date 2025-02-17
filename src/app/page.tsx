@@ -63,7 +63,7 @@ export default function HomePage() {
               </Button>
             </div>
           </section>
-          <div className="w-full flex justify-center relative">
+          {/* <div className="w-full flex justify-center relative">
             <Image
               src="/demo-light-min.png"
               width={1080}
@@ -94,32 +94,12 @@ export default function HomePage() {
               alt="demo-mobile"
               className="border border-zinc-600 rounded-xl absolute bottom-0 right-0 hidden dark:lg:block"
             />
-          </div>
+          </div> */}
         </div>
       </main>
       <footer className="py-6 md:py-0 border-t border-border/40">
-        <div className="container flex flex-col items-center justify-center gap-4 md:h-24 md:flex-row">
-          <p className="text-balance text-center text-sm leading-loose text-muted-foreground">
-            Built on top of{" "}
-            <Link
-              href="https://ui.shadcn.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium underline underline-offset-4"
-            >
-              shadcn/ui
-            </Link>
-            . The source code is available on{" "}
-            <Link
-              href="https://github.com/salimi-my/shadcn-ui-sidebar"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium underline underline-offset-4"
-            >
-              GitHub
-            </Link>
-            .
-          </p>
+        <div>
+          copyright by 2025
         </div>
       </footer>
     </div>

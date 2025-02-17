@@ -38,24 +38,6 @@ export default function productPage() {
     fetchProducts();
   }, [pagination.current_page, search]);
 
-  // const fetchProducts = async () => {
-  //   try {
-  //     const res = await fetch(
-  //       `http://localhost:8002/api/products/list?page=${pagination.current_page}&search=${search}`
-  //     );
-  //     const data = await res.json();
-  //     setProducts(data.data);
-  //     setPagination({
-  //       current_page: data.current_page,
-  //       last_page: data.last_page,
-  //       per_page: data.per_page,
-  //     });
-  //   } catch (error) {
-  //     console.error("Error fetching products:", error);
-  //   }
-  // };
-
-
   const fetchProducts = async () => {
     try {
       const res = await axios.get(
@@ -140,6 +122,9 @@ export default function productPage() {
           </Link>
         </div>
       </Breadcrumb>
+      <div>
+        <h1 className="text-3xl font-bold">Product</h1>
+      </div>
 
       <Card className="rounded-lg border-none mt-6">
         <CardContent className="p-6">
