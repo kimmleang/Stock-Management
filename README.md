@@ -85,6 +85,7 @@ The app is hosted on Vercel. [Click here](https://shadcn-ui-sidebar.salimi.my) t
 <br>
 Direct demo link: `https://shadcn-ui-sidebar.salimi.my`
 
+Shadcn for Next js
 ## Screenshots
 
 #### Light mode
